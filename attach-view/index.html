@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #main-container {
+            min-height: 800px;
+        }
+    </style>
+
+    <script type="template/html" id="topo-template">
+        <div id="plot"></div>
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Application</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-links">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Monkeys</a></li>
+                    <li><a href="#gorillas">Gorillas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="main-container">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <p id="primary-view"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="muted credit">&copy; 2014 Mike Stapp (<a href="https://github.com/mstapp">github</a>)
+            </p>
+        </div>
+    </footer>
+
+    <script src="libs/underscore.js"></script>
+    <script src="libs/jquery-1.11.0.min.js"></script>
+    <script src="libs/backbone.js"></script>
+    <script src="libs/backbone.marionette.js"></script>
+
+    <script src="src/main.js"></script>
+    <script src="src/navbar.js"></script>
+    <script src="src/monkeys.js"></script>
+    <script src="src/gorillas.js"></script>
+
+    <script>
+        $(function() {
+            SITE.start();
+        });
+    </script>
+</body>
+</html>
