@@ -5,6 +5,7 @@ SITE.module('Page.Monkeys', function(Module, App, Backbone, Marionette, $, _){
 
     var moduleName = 'Page.Monkeys',
         router = new Backbone.Router();
+
     router.route('', moduleName, function() {
         App.startSubApp(moduleName); // calls initializer, below
         Module.controller.start();
@@ -26,10 +27,19 @@ SITE.module('Page.Monkeys', function(Module, App, Backbone, Marionette, $, _){
     });
 
 
+    var isFirstView = true;
+
     Module.Controller = Marionette.Controller.extend({
-        start: function(){
-            this.view = new Module.View();
-            App.primaryRegion.show(this.view);
+        start: function() {
+            if (isFirstView) {
+                isFirstView = false;
+                this.view = new Module.View( {el: '#primary-view'} );
+                App.primaryRegion.attachView(this.view);
+            }
+            else {
+                this.view = new Module.View();
+                App.primaryRegion.show(this.view);
+            }
         },
     });
 

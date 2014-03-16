@@ -5,6 +5,7 @@ SITE.module('Page.Gorillas', function(Module, App, Backbone, Marionette, $, _){
 
     var moduleName = 'Page.Gorillas',
         router = new Backbone.Router();
+
     router.route('gorillas', moduleName, function() {
         App.startSubApp(moduleName); // calls initializer, below
         Module.controller.start();

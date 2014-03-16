@@ -4,7 +4,7 @@ SITE = (function(Backbone){
     var App = new Backbone.Marionette.Application();
 
     App.addRegions({
-        primaryRegion: "#primary-view",
+        primaryRegion: "#primary-region",
     });
 
     App.on("initialize:after", function(){
